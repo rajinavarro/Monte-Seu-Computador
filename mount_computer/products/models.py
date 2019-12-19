@@ -22,11 +22,11 @@ class Motherboard(models.Model):
         return self.name
 
 class RamMemory(models.Model):
-    name = 'Hiper X'
     ram_size = models.IntegerField()
-
+    name = models.CharField(max_length=7,default='Hiper X')
+    
     def __str__(self):
-        return self.name
+        return self.name + ' (' + str(self.ram_size) + ' GB)'
 
 class VideoCard(models.Model):
     name = models.CharField(max_length=200)
