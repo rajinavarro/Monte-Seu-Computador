@@ -4,7 +4,7 @@ from products.views import *
 # Create your models here.
 
 class Order(models.Model):
-    
+    user = models.CharField(max_length=120)
     cpu = models.ManyToManyField(Cpu)
     motherboard = models.ManyToManyField(Motherboard)
     videocard = models.ManyToManyField(VideoCard)
@@ -12,3 +12,5 @@ class Order(models.Model):
     class Meta:
         verbose_name = u'Order'
         verbose_name_plural = u'Orders'
+    def __str__(self):
+        return self.user
