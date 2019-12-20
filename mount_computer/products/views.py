@@ -1,27 +1,28 @@
 from django.shortcuts import render
-from rest_framework import viewsets
-from .serializers import *
-from .models import *
+from rest_framework.viewsets import ModelViewSet
+from .models import Cpu, VideoCard, RamMemory, Motherboard
+from .serializers import CpuSerializer, MotherboardSerializer, VideoCardSerializer, RamMemorySerializer
 
 # Create your views here.
 
-class CpuViewSet(viewsets.ModelViewSet):
+class CpuViewSet(ModelViewSet):
     queryset = Cpu.objects.all()
     serializer_class = CpuSerializer
-    http_method_names = ['get']
+    #http_method_names = ['get']
 
-class MotherboardViewSet(viewsets.ModelViewSet):
+
+class MotherboardViewSet(ModelViewSet):
     queryset = Motherboard.objects.all()
     serializer_class = MotherboardSerializer
-    http_method_names = ['get']
+    #http_method_names = ['get']
 
-class RamMemoryViewSet(viewsets.ModelViewSet):
+class RamMemoryViewSet(ModelViewSet):
     queryset = RamMemory.objects.all()
     serializer_class = RamMemorySerializer
-    http_method_names = ['get']
+    #http_method_names = ['get']
 
-class VideoCardViewSet(viewsets.ModelViewSet):
+class VideoCardViewSet(ModelViewSet):
     queryset = VideoCard.objects.all()
     serializer_class = VideoCardSerializer
-    http_method_names = ['get']
+    #http_method_names = ['get']
 

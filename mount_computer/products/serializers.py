@@ -1,22 +1,26 @@
-from rest_framework import serializers
-from .models import * 
+from rest_framework.serializers import ModelSerializer
+from products.models import Cpu, VideoCard, RamMemory, Motherboard
 
-class CpuSerializer(serializers.Serializer):
+class CpuSerializer(ModelSerializer):
     class Meta:
         model = Cpu
         fields = '__all__'
 
-class MotherboardSerializer(serializers.Serializer):
+
+class MotherboardSerializer(ModelSerializer):
     class Meta:
         model = Motherboard
         fields = '__all__'
 
-class RamMemorySerializer(serializers.Serializer):
+
+class RamMemorySerializer(ModelSerializer):
     class Meta:
         model = RamMemory
         fields = '__all__'
 
-class VideoCardSerializer(serializers.Serializer):
+
+
+class VideoCardSerializer(ModelSerializer):
     class Meta:
         model = VideoCard
         fields = '__all__'
