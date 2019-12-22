@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> Add a new CPU</h1>
+
+<form method='POST'> {% csrf_token %}
+{{ form.as_p }}
+<input type='submit' value='Save'/>
+<a href='http://127.0.0.1:8000/products/cpu-list/'>back</a>
+</form>
+
+{% endblock %}

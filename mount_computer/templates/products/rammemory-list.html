@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Cpu's available</h1>
+    
+    
+    <a href='http://127.0.0.1:8000/products/rammemory-add/'> Add a new Ram Memory</a>
+
+    <ul>
+    {% for product in name %}
+    <li> {{product.name}} <p> {{product.ram_size}} GB </p></li>
+    {% endfor %}
+    </ul>
+    
+    <a href = 'http://127.0.0.1:8000/products/'> Back to Products </a>
+
+{% endblock %}

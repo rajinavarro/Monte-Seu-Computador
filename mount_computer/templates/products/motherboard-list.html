@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Motherboard's available</h1>
+    <a href='http://127.0.0.1:8000/products/motherboard-add/'> Add a new Motherboard</a>
+    
+    <ul>
+    {% for product in name %}
+    <li> 
+    
+    {{product.name}}  
+    <p> Supported CPU: {{product.supported_cpu}}</p>
+    <p> Ram slots: {{product.ram_slots}}</p>
+    <p> Supported ram size: {{product.supported_ram_size}} GB</p>
+    <p> Integrated video: {{product.integrated_video}}</p>
+    <br>
+
+    </li>
+    {% endfor %}
+    </ul>
+
+    <a href = 'http://127.0.0.1:8000/products/'> Back to Products </a>
+{% endblock %}

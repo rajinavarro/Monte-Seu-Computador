@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Cpu's available</h1> 
+    <a href='http://127.0.0.1:8000/products/cpu-add/'> Add a new CPU</a>
+    
+    <ul>
+    
+    {% for product in name %}
+    
+    <li> {{product.name}}
+        <tr class='item'>
+            <input type='checkbox' name='item' value={{product.id}}> 
+        </tr> 
+        <p>
+            {{product.enterprise}} 
+        </p>
+    </li>
+    {% endfor %}
+    <form method='REMOVE'> {% csrf_token %}
+    <h1><input type='submit' name='delete' value='Delete selected items' /> </h1>
+    </ul>
+    </form>
+    
+<a href = 'http://127.0.0.1:8000/products/'> Back to Products </a>
+{% endblock %}

@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from products.models import Cpu, VideoCard, RamMemory, Motherboard
+from products.models import *
 
 class CpuSerializer(ModelSerializer):
     class Meta:
@@ -17,7 +17,6 @@ class RamMemorySerializer(ModelSerializer):
     class Meta:
         model = RamMemory
         fields = '__all__'
-
 
 
 class VideoCardSerializer(ModelSerializer):
