@@ -51,7 +51,6 @@ class OrderForm(forms.ModelForm):
         rammemory_list = []
         total_ram = 0
         for index in rammemory:
-
             rammemory_list.append(index)
             total_ram += int(str(index)[7:])
             
@@ -79,8 +78,7 @@ class OrderForm(forms.ModelForm):
                 return videocard
         if (motherboard != None):  
             for index in motherboard:
-                motherboard_object = Motherboard.objects.get(name=index)
-            
+                motherboard_object = Motherboard.objects.get(name=index)  
             if(motherboard_object.integrated_video == False and index_list == []):
                 raise forms.ValidationError("You have to choose one videocard, because yout motherboard doesn't have integrated videocard")
                 return videocard

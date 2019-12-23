@@ -5,14 +5,23 @@ from .models import Order
 from .serializers import OrderSerializer
 from products.views import *
 from products.models import *
+from .models import Order
 from .forms import *
 
 
 def orders_list(request, *args, **kwargs):
     obj = Order.objects.all()
-    print('obj = ',obj)
+    name, cpu, motherboard, videocard, rammemory = [], [], [], [], []
+    for i in obj:
+        name.append(i.name)
+        cpu.append(i.cpu.all())
+        motherboard.append(i.motherboard.all())
+        videocard.append(i.videocard.all())
+        rammemory.append(i.rammemory.all())
+    order = [name, cpu, motherboard, videocard, rammemory]
+
     context = {
-        'name': obj
+        'order':order
         }
     return render(request, 'orders/orders.html', context)
 

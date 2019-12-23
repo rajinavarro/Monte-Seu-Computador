@@ -2,26 +2,13 @@
 
 {% block content %}
     <h1>orders</h1>
-    {{name}}
-    {{cpu}}
-    {{motherboard}}
-    {{name.name}}
+    {{field.1}}
+    {% for field in order%}
+
+    {{field.cpu}}
+    {% endfor %}
     
     <ul>
-    {% for product in name %}
-    
-    <li>
-    
-    {{product.name}} 
-    <p>id: {{product.id}}</p>  
-    <p> CPU: {{product.cpu}}</p>
-    <p> Ram Memory: {{product.rammemory}}</p>
-    <p> Motherboard: {{product.motherboard}} </p>
-    <p> Videocard: {{product.videocard}}</p>
-    <br>
-
-    </li>
-    {% endfor %}
     </ul>
 
 
