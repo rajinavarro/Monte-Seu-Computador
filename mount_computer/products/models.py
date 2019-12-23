@@ -25,7 +25,7 @@ class RamMemory(models.Model):
     
 
     def __str__(self):
-        return self.name + ' (' + str(self.ram_size) + ' GB)'
+        return self.name + ' ' + str(self.ram_size)
 
 class VideoCard(models.Model):
     name = models.CharField(max_length=200)

@@ -77,8 +77,7 @@ def videocard_list(request, *args, **kwargs):
 def rammemory_list(request, *args, **kwargs):
     obj = RamMemory.objects.all()
     context = {
-        'name': obj,
-        'ramSize':obj,
+        'name': obj
     }
     return render(request, 'products/rammemory-list.html', context)
     

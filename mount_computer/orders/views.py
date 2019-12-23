@@ -5,11 +5,12 @@ from .models import Order
 from .serializers import OrderSerializer
 from products.views import *
 from products.models import *
+from .forms import *
 
 
 def orders_list(request, *args, **kwargs):
     obj = Order.objects.all()
-
+    print('obj = ',obj)
     context = {
         'name': obj
         }
@@ -17,9 +18,8 @@ def orders_list(request, *args, **kwargs):
 
 
 class OrderViewSet(ModelViewSet):
-
-    serializer_class = OrderSerializer
     queryset = Order.objects.all()
+    serializer_class = OrderSerializer
     '''
     def get_queryset(self):
         queryset = Order.objects.all()
@@ -28,3 +28,15 @@ class OrderViewSet(ModelViewSet):
             queryset = Order.objects.filter(user=user)
         return queryset
     '''
+def add_order(request):
+    form = OrderForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form = OrderForm()
+        
+    context = {
+        'form':form
+    }
+    
+    return render(request, "orders/order-add.html", context)
+
