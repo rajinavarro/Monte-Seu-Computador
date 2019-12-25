@@ -11,7 +11,7 @@ from .forms import *
 
 def orders_list(request, *args, **kwargs):
     obj = Order.objects.all()
-    name, cpu, motherboard, videocard, rammemory = [], [], [], [], []
+
     for i in obj:
         name.append(i.name)
         cpu.append(i.cpu.all())
@@ -49,3 +49,6 @@ def add_order(request):
     
     return render(request, "orders/order-add.html", context)
 
+
+
+    
