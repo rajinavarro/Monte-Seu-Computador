@@ -1,0 +1,7 @@
+<div class='layout'>
+
+    <app-product-list [cpus] = 'cpus' [videocards] = 'videocards' [motherboards] = 'motherboards' [rammemorys] = 'rammemorys' (selectProduct)='selectProduct($event)'> </app-product-list>
+    
+    <app-product-details [product] = 'this.selectedProduct'> </app-product-details> 
+    
+</div>

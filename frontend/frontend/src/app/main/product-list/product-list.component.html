@@ -1,0 +1,29 @@
+<h1>Products List</h1>
+
+<h2> CPU's </h2>
+<div *ngFor="let cpu of cpus" (click)='productClicked(cpu)'>
+<ul>
+    <li> {{cpu.name}}  </li>
+</ul>
+</div>
+
+<h2> Motherboards </h2>
+<div *ngFor="let motherboard of motherboards" (click)='productClicked(motherboard)'>
+<ul>
+    <li> {{motherboard.name}}  </li>
+</ul>
+</div>
+
+<h2> Videocards </h2>
+<div *ngFor="let videocard of videocards" (click)='productClicked(videocard)'>
+<ul>
+    <li> {{videocard.name}}  </li>
+</ul>
+</div>
+
+<h2> Ram Memorys </h2>
+<div *ngFor="let rammemory of rammemorys" (click)='productClicked(rammemory)'>
+<ul>
+    <li> {{rammemory.name}} {{rammemory.ram_size}}  GB  </li>
+</ul>
+</div>

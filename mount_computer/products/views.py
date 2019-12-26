@@ -6,6 +6,13 @@ from .serializers import *
 from .forms import * 
 
 
+def get_queryset(self):
+    queryset = Order.objects.all()
+    id = self.request.query_params.get('id',None)
+    if user:
+        queryset = Order.objects.filter(id=id)
+    return queryset
+
 def products_list(request, *args, **kwargs):
     obj = Cpu.objects.all()
     context = {

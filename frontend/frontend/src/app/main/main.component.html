@@ -1,0 +1,7 @@
+<div class='layout'>
+  
+    <app-order-list [orders] = 'orders' (selectOrder)='selectOrder($event)'> </app-order-list>
+
+    <app-order-details [order] = 'this.selectedOrder' (selectProduct)='selectProduct($event)'> </app-order-details>
+        
+</div>

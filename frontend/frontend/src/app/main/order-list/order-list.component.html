@@ -1,0 +1,9 @@
+
+<h1> All orders listed </h1>
+<div *ngFor="let order of orders" (click)='orderClicked(order)'>
+
+<ul>
+    <li> {{order.name}}  </li>
+</ul>
+
+</div>

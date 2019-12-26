@@ -1,0 +1,50 @@
+  <div class=OrderForm>
+	<h1> Add a new Order</h1>
+
+	<form [formGroup]='orderForm' (ngSubmit)='saveForm()'> 
+		
+    <p>
+    <label >Name:</label>
+			<input type="text" maxlength="120" formControlName='name'>
+    </p>
+
+	<p>
+      <label > Cpu: </label> 
+      <select formControlName="cpu">
+        <option *ngFor='let cpu of cpus' [ngValue] ='cpu.name'> {{cpu.name}} </option>
+      </select>
+  </p>
+
+  <p>
+      <label > Motherboard: </label> 
+      <select formControlName="motherboard">
+        <option *ngFor='let motherboard of motherboards' [ngValue] ='motherboard.name'> {{motherboard.name}} </option>
+      </select>
+  </p>
+			
+  <p>
+      <label > Videocard: </label> 
+      <select formControlName="videocard">
+        <option *ngFor='let videocard of videocards' [ngValue] ='videocard.name'> {{videocard.name}} </option>
+      </select>
+  </p>
+  
+  <p>
+      <label > Ram Memory: </label> 
+      <select formControlName="rammemory">
+        <option *ngFor='let rammemory of rammemorys' [ngValue] ='rammemory.ram_size'> {{rammemory.name}} {{rammemory.ram_size}} GB </option>
+      </select>
+  </p>
+  <p>
+      <label > Ram Memory: </label> 
+      <select formControlName="rammemory2">
+        <option *ngFor='let rammemory of rammemorys' [ngValue] ='rammemory.ram_size' > {{rammemory.name}} {{rammemory.ram_size}} GB </option>
+      </select>
+  </p>
+  <button onclick="window.location.href ='http://localhost:4200/orders';" type='submit'>Save</button>
+  <button onclick= "window.location.href ='http://localhost:4200/orders';"> Cancel </button> 
+  
+    
+  </form>
+
+  </div>
