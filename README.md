@@ -32,6 +32,7 @@ python manage.py runserver
 ```
 npm install -g @angular/cli
 cd frontend
+npm start
 ```
 # Endpoints
 ```
@@ -42,3 +43,18 @@ http://127.0.0.1:8000/products/api/ram-memory/
 http://127.0.0.1:8000/products/api/video-card/"
 
 ```
+# Frontend
+```
+http://localhost:4200/orders
+http://localhost:4200/products
+```
+
+## Orders Screen
+#### Order detail change when clicked
+![9027594b.png](:storage\5fab4422-806c-4760-92ad-d13025a411a9\9027594b.png)
+
+![d778eb94.png](:storage\5fab4422-806c-4760-92ad-d13025a411a9\d778eb94.png)
+
+## Products Screen
+#### Product detail change when product is clicked
+![67c96c77.png](:storage\5fab4422-806c-4760-92ad-d13025a411a9\67c96c77.png)
