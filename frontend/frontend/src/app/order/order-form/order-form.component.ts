@@ -1,6 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { ApiService } from '../../api.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-order-form',
@@ -30,7 +31,9 @@ export class OrderFormComponent implements OnInit {
     motherboard: new FormControl(null),
     videocard: new FormControl(null),
     rammemory: new FormControl(null),
-    rammemory2: new FormControl(null)
+    rammemory2: new FormControl(null),
+    rammemory3: new FormControl(null),
+    rammemory4: new FormControl(null)
     });
   }
   saveForm(){
@@ -41,7 +44,9 @@ export class OrderFormComponent implements OnInit {
       this.orderForm.value.motherboard,
       this.orderForm.value.videocard, 
       this.orderForm.value.rammemory,
-      this.orderForm.value.rammemory2
+      this.orderForm.value.rammemory2,
+      this.orderForm.value.rammemory3,
+      this.orderForm.value.rammemory4
       ).subscribe(
         result => console.log(result),
         error => console.log(error)

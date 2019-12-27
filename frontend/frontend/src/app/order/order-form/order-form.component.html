@@ -41,7 +41,20 @@
         <option *ngFor='let rammemory of rammemorys' [ngValue] ='rammemory.ram_size' > {{rammemory.name}} {{rammemory.ram_size}} GB </option>
       </select>
   </p>
-  <button onclick="window.location.href ='http://localhost:4200/orders';" type='submit'>Save</button>
+  <p>
+      <label > Ram Memory: </label> 
+      <select formControlName="rammemory3">
+        <option *ngFor='let rammemory of rammemorys' [ngValue] ='rammemory.ram_size' > {{rammemory.name}} {{rammemory.ram_size}} GB </option>
+      </select>
+  </p>
+  <p>
+      <label > Ram Memory: </label> 
+      <select formControlName="rammemory4">
+        <option *ngFor='let rammemory of rammemorys' [ngValue] ='rammemory.ram_size' > {{rammemory.name}} {{rammemory.ram_size}} GB </option>
+      </select>
+  </p>
+  <button onclick= "window.location.href ='http://localhost:4200/orders';" type='submit'>Save</button>
+
   <button onclick= "window.location.href ='http://localhost:4200/orders';"> Cancel </button> 
   
     

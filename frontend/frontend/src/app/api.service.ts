@@ -40,9 +40,9 @@ export class ApiService {
      
     return this.httpClient.get(this.baseUrl+'orders/api/', {headers: this.headers});
   }
-  createOrder(name: string, cpu: string, motherboard: string, videocard:string, rammemory:string, rammemory2: string){
+  createOrder(name: string, cpu: string, motherboard: string, videocard:string, rammemory:string, rammemory2: string,rammemory3: string,rammemory4: string){
     console.log(this.headers);
-    const body = JSON.stringify({name, cpu, motherboard, videocard, rammemory, rammemory2});
+    const body = JSON.stringify({name, cpu, motherboard, videocard, rammemory, rammemory2,rammemory3,rammemory4});
     
     return this.httpClient.post(this.baseUrl+'orders/api/',body,{headers: this.headers});
   }
