@@ -38,7 +38,7 @@ def validate(data):
     try:
         rammemory4 = RamMemory.objects.get(ram_size=data['rammemory4'])
     except:
-        rammemory2 = None
+        rammemory4 = None
 
     # Verifying if motherboard have support for CPU choosed
     if (motherboard.supported_cpu != cpu.enterprise):
@@ -63,11 +63,6 @@ def validate(data):
         raise ValidationError("You can't choose more RAM than motherboard supports")
 
     # Verifying if motherboard support the size of two ram memory
-    counter = 0
-    for index in list_of_ram:
-        counter += index.ram_size
-    if (counter > motherboard.supported_ram_size):
-        raise ValidationError("Motherboard doesn't support this ram size")
     
     # Verifying if motherboard need videocard
     if(motherboard.integrated_video == False and videocard == None):
